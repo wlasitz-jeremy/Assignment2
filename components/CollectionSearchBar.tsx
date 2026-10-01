@@ -1,6 +1,8 @@
 import { View, TextInput, StyleSheet } from "react-native";
 import { SymbolView } from "expo-symbols";
 
+// import { Ionicons } from "@expo/vector-icons";
+
 export default function CollectionSearchBar({ mainSearch, subSearch }: { mainSearch: string, subSearch: string }) {
   return (
           <View style={styles.searchBarContainer}>
@@ -14,6 +16,9 @@ export default function CollectionSearchBar({ mainSearch, subSearch }: { mainSea
                 tintColor="black"
                 size={20}
               />
+
+              {/* <Ionicons name="search" size={20} color="black" /> */}
+              
               <TextInput
                 placeholder={mainSearch}
                 style={styles.mainSearch}
@@ -27,17 +32,20 @@ export default function CollectionSearchBar({ mainSearch, subSearch }: { mainSea
                 tintColor="black"
                 size={20}
               />
+              
+              {/* <Ionicons name="chevron-down" size={20} color="black" /> */}
+            
             </View>
           </View>
   );
 }
+
 const styles = StyleSheet.create({
-      searchBarContainer: {
+  searchBarContainer: {
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "center",
     marginHorizontal: 50,
-    marginBottom: 10,
   },
   mainSearchContainer: {
     flexDirection: "row",
