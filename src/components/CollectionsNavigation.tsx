@@ -1,14 +1,22 @@
-import { Text, View, StyleSheet } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { Text, View, StyleSheet, Pressable } from "react-native";
+import { useRouter } from "expo-router";
+import { useState } from "react";
 
 
 export default function CollectionsNavigation() {
     const router = useRouter();
+    const [isBold, setIsBold] = useState(false);
     return (
         <View style={styles.collectionsHeader}>
-            <Text onPress={() => router.replace("/(tabs)/collections/collectionsIndex")} style={styles.title}>Collections</Text>
-            <Text onPress={() => router.replace("/(tabs)/collections/decks")} style={styles.title}>Decks</Text>
-            <Text onPress={() => router.replace("/(tabs)/collections/explore")} style={styles.title}>Explore</Text>
+          <Pressable>
+            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/collectionsIndex")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Collections" : "Collections"}</Text>
+          </Pressable>
+          <Pressable>
+            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/decks")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Decks" : "Decks"}</Text>
+          </Pressable>
+          <Pressable>
+            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/explore")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Explore" : "Explore"}</Text>
+          </Pressable>
         </View>
     );
 }
@@ -23,7 +31,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Souliyo Unicode",
-    fontSize: 20,
+    fontSize: 22,
     color: "#1E293B",
+  },
+  boldText: {
+    fontWeight: "bold",
   },
 });

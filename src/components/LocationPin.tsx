@@ -1,13 +1,10 @@
 import { SymbolView } from "expo-symbols";
 import { StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function LocationPin() {
   return (
-    <SymbolView style={styles.locationPin}
-      name={{ ios: "mappin", android: "location_on", web: "pin" }}
-      tintColor="black"
-      size={60}
-    />
+    <Ionicons name="location" size={60} color="black" style={styles.locationPin}/>
   );
 }
 

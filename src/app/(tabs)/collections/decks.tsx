@@ -1,15 +1,12 @@
 import {
   StyleSheet,
   ScrollView,
-  Text,
   View,
 } from "react-native";
 import CardImage from "../../../components/CardImage";
 import HamburgerMenu from "../../../components/HamburgerMenu";
 import { SafeAreaView } from "react-native-safe-area-context";
-import NavigationBar from "../../../components/NavigationBar";
 import CollectionSearchBar from "../../../components/CollectionSearchBar";
-import { router } from "expo-router";
 import CollectionsNavigation from "../../../components/CollectionsNavigation";
 
 {
@@ -96,7 +93,6 @@ export default function Decks() {
             <ScrollView style={styles.scrollView}>
                 <CardImage images={RandomizedDecksCardImages} />
             </ScrollView>
-            {/* <NavigationBar /> */}
         </SafeAreaView>
     );
 }
@@ -110,7 +106,7 @@ const styles = StyleSheet.create({
   scrollView: {
     width: "100%",
     height: "100%",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   title: {
     fontFamily: "Souliyo Unicode",
@@ -120,9 +116,5 @@ const styles = StyleSheet.create({
   },
   decksHeader: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-    width: "100%",
-    marginRight: 25,
   },
 });

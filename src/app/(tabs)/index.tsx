@@ -26,6 +26,12 @@ import CollectionSearchBar from "../../components/CollectionSearchBar";
 }
 const pokemonCardImages = [
   require("../../../assets/pokemonCards/pikachu_image.png"),
+require("../../../assets/pokemonCards/arceus_image.png"),
+  require("../../../assets/pokemonCards/g_image.png"),
+  require("../../../assets/pokemonCards/pikachu_image.png"),
+require("../../../assets/pokemonCards/arceus_image.png"),
+  require("../../../assets/pokemonCards/g_image.png"),
+  require("../../../assets/pokemonCards/pikachu_image.png"),
   require("../../../assets/pokemonCards/arceus_image.png"),
   require("../../../assets/pokemonCards/g_image.png"),
 ];
@@ -37,12 +43,24 @@ const magicCardImages = [
   require("../../../assets/magicCards/magic1.png"),
   require("../../../assets/magicCards/magic2.png"),
   require("../../../assets/magicCards/magic3.png"),
+  require("../../../assets/magicCards/magic1.png"),
+  require("../../../assets/magicCards/magic2.png"),
+  require("../../../assets/magicCards/magic3.png"),
+  require("../../../assets/magicCards/magic1.png"),
+  require("../../../assets/magicCards/magic2.png"),
+  require("../../../assets/magicCards/magic3.png"),
 ];
 
 {
   /*Riftbound Card Image Carousel */
 }
 const riftboundCardImages = [
+  require("../../../assets/riftboundCards/r1.png"),
+  require("../../../assets/riftboundCards/r2.png"),
+  require("../../../assets/riftboundCards/r3.png"),
+  require("../../../assets/riftboundCards/r1.png"),
+  require("../../../assets/riftboundCards/r2.png"),
+  require("../../../assets/riftboundCards/r3.png"),
   require("../../../assets/riftboundCards/r1.png"),
   require("../../../assets/riftboundCards/r2.png"),
   require("../../../assets/riftboundCards/r3.png"),
@@ -99,6 +117,7 @@ const styles = StyleSheet.create({
   header: {
     height: 160,
     width: "100%",
+    marginBottom: 20,
   },
   headerIcons: {
     flexDirection: "row",
@@ -124,8 +143,6 @@ const styles = StyleSheet.create({
   },
   content: {
     width: "100%",
-    height: "100%",
-    marginTop: 15,
   },
   scrollcontent: {
     width: "100%",

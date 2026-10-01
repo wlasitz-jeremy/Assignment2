@@ -16,7 +16,7 @@ export default function TabBarLayout() {
             borderRadius: 10,
             flexDirection: "row",
             alignItems: "center",
-            paddingHorizontal: 30,
+            // paddingHorizontal: 30,
             borderColor: "#000000",
           },
         }}
