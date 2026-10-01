@@ -1,37 +1,72 @@
 import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function TabLayout() {
+export default function TabBarLayout() {
   return (
     <Tabs 
         screenOptions={{
-            headerShown: false,
-            tabBarStyle: {
-                display: "none",
-            },
-      }}
+          headerShown: false,
+          tabBarStyle: {
+            height: 78.5,
+            width: "80%",
+            backgroundColor: "#E2E1F4",
+            borderWidth: 1,
+            marginBottom: 40,
+            marginLeft: "10%",
+            borderRadius: 10,
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: 30,
+            borderColor: "#000000",
+          },
+        }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "home" : "home-outline"}
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="cardScanner"
         options={{
-          title: "Card Scanner",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "camera" : "camera-outline"}
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="universalSearch"
         options={{
-          title: "Universal Search",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "search" : "search-outline"}
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="collections"
         options={{
-          title: "Collections",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "book" : "book-outline"}
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
     </Tabs>

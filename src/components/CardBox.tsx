@@ -12,13 +12,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 type Props = {
   // An array of image sources to display in the carousel.
   images: ImageSourcePropType[];
+  // The text to display above the image carousel.
+  CardBoxText: string;
 };
 
 /* Renders an image carousel within a styled card box. 
 Includes left/right navigation arrows and pagination dots.*/
-export default function cardBox({ images }: Props) {
+export default function cardBox({ images, CardBoxText }: Props) {
   return (
     <SafeAreaView>
+      <Text style={{ color: "#424B57" }}>{CardBoxText}</Text>
       <View style={styles.imageCarousel}>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>

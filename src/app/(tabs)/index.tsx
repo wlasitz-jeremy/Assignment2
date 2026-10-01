@@ -6,12 +6,12 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import LocationPin from "../../../components/LocationPin";
-import HamburgerMenu from "../../../components/HamburgerMenu";
+import LocationPin from "../../components/LocationPin";
+import HamburgerMenu from "../../components/HamburgerMenu";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CardBox from "../../../components/CardBox";
-import NavigationBar from "../../../components/NavigationBar";
-import CollectionSearchBar from "../../../components/CollectionSearchBar";
+import CardBox from "../../components/CardBox";
+import NavigationBar from "../../components/NavigationBar";
+import CollectionSearchBar from "../../components/CollectionSearchBar";
 
 {
   /*
@@ -60,6 +60,7 @@ const riftboundCardImages = [
     Search Function
     Library*/
 }
+
 export default function Index() {
   return (
       <SafeAreaView style={styles.container}>
@@ -76,15 +77,12 @@ export default function Index() {
         </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
-            <Text style={styles.sectionTitle}>Recently Added</Text>
-            <CardBox images={pokemonCardImages} />
-            <Text style={styles.sectionTitle}>Top Gains / Losses</Text>
-            <CardBox images={magicCardImages} />
-            <Text style={styles.sectionTitle}>Collection Progress</Text>
-            <CardBox images={riftboundCardImages} />
+            <CardBox CardBoxText="Recently Added" images={pokemonCardImages} />
+            <CardBox CardBoxText="Top Gains / Losses" images={magicCardImages} />
+            <CardBox CardBoxText="Collection Progress" images={riftboundCardImages} />
           </View>
         </ScrollView>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
       </SafeAreaView>
   );
 }
@@ -127,17 +125,10 @@ const styles = StyleSheet.create({
   content: {
     width: "100%",
     height: "100%",
-    marginVertical: 10,
+    marginTop: 15,
   },
   scrollcontent: {
     width: "100%",
     alignItems: "center",
-  },
-  sectionTitle: {
-    fontFamily: "Oswald",
-    alignSelf: "flex-start",
-    marginLeft: 35,
-    fontSize: 16,
-    color: "#424B57",
   },
 });
