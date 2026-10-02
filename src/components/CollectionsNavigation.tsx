@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "expo-router";
 export default function CollectionsNavigation() {
     const router = useRouter();
     const pathname = usePathname();
-    
+
     return (
         <View style={styles.collectionsHeader}>
           <Pressable onPress={() => router.replace("/(tabs)/collections/collectionsIndex")}>
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   isActive: {
     fontWeight: "bold",
     color: "#1E293B",
+    textDecorationLine: "underline",
   },
   isNotActive: {
     fontWeight: "regular",
