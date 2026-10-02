@@ -1,21 +1,21 @@
 import { Text, View, StyleSheet, Pressable } from "react-native";
-import { useRouter } from "expo-router";
+import { usePathname, useRouter } from "expo-router";
 import { useState } from "react";
-
 
 export default function CollectionsNavigation() {
     const router = useRouter();
-    const [isBold, setIsBold] = useState(false);
+    const pathname = usePathname();
+    // const [activeTab, setActiveTab] = useState(pathname);
     return (
         <View style={styles.collectionsHeader}>
-          <Pressable>
-            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/collectionsIndex")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Collections" : "Collections"}</Text>
+          <Pressable onPress={() => router.replace("/(tabs)/collections/collectionsIndex")}>
+            <Text style={[styles.title, pathname === "/collections/collectionsIndex" ? styles.isActive : styles.isNotActive]}>Collections</Text>
           </Pressable>
-          <Pressable>
-            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/decks")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Decks" : "Decks"}</Text>
+          <Pressable onPress={() => router.replace("/(tabs)/collections/decks")}>
+            <Text style={[styles.title, pathname === "/collections/decks" ? styles.isActive : styles.isNotActive]}>Decks</Text>
           </Pressable>
-          <Pressable>
-            <Text onPress={() => {setIsBold(!isBold); router.replace("/(tabs)/collections/explore")}} style={[styles.title, isBold && styles.boldText]}>{isBold ? "Explore" : "Explore"}</Text>
+          <Pressable onPress={() => router.replace("/(tabs)/collections/explore")}>
+            <Text style={[styles.title, pathname === "/collections/explore" ? styles.isActive : styles.isNotActive]}>Explore</Text>
           </Pressable>
         </View>
     );
@@ -32,9 +32,16 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Souliyo Unicode",
     fontSize: 22,
-    color: "#1E293B",
   },
   boldText: {
     fontWeight: "bold",
+  },
+  isActive: {
+    fontWeight: "bold",
+    color: "#1E293B",
+  },
+  isNotActive: {
+    fontWeight: "regular",
+    color: "#424B57"
   },
 });
