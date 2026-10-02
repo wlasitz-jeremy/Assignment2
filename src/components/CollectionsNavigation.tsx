@@ -1,11 +1,10 @@
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import { usePathname, useRouter } from "expo-router";
-import { useState } from "react";
 
 export default function CollectionsNavigation() {
     const router = useRouter();
     const pathname = usePathname();
-    // const [activeTab, setActiveTab] = useState(pathname);
+    
     return (
         <View style={styles.collectionsHeader}>
           <Pressable onPress={() => router.replace("/(tabs)/collections/collectionsIndex")}>
