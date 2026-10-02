@@ -2,9 +2,9 @@ import {
   Image,
   ImageSourcePropType,
   StyleSheet,
-  ScrollView,
   Text,
   View,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -12,22 +12,27 @@ import { SafeAreaView } from "react-native-safe-area-context";
 type Props = {
   // An array of image sources to display in the carousel.
   images: ImageSourcePropType[];
+  // The text to display above the image carousel.
+  CardBoxText: string;
 };
 
 /* Renders an image carousel within a styled card box. 
 Includes left/right navigation arrows and pagination dots.*/
-export default function cardBox({ images }: Props) {
+export default function cardBox({ images, CardBoxText }: Props) {
   return (
-    <SafeAreaView>
+    <View>
+      <Text style={{ color: "#424B57" }}>{CardBoxText}</Text>
       <View style={styles.imageCarousel}>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>
         </View>
-        <View style={styles.imageRow}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+          <View style={styles.imageRow}>
           {images.map((image, Index) => (
             <Image key={Index} source={image} style={styles.cardImage} />
           ))}
-        </View>
+          </View>
+        </ScrollView>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>›</Text>
         </View>
@@ -37,29 +42,28 @@ export default function cardBox({ images }: Props) {
           ))}
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flexDirection: "row",
+  },
   //images
   cardImage: {
-    width: 75,
-    height: 75,
+    width: 100,
+    height: 100,
     borderRadius: 7.5,
-    padding: 4,
     marginTop: 15,
     marginRight: 15,
     resizeMode: "cover",
   },
 
   imageRow: {
-    // width: 30,
-    // height: 50,
-    marginLeft: 15,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row",
   },
 
   innerShadow: {
@@ -81,8 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#aaa5c8",
     borderRadius: 10,
-    marginTop: 2,
-    marginBottom: 2.5,
+    marginBottom: 30,
 
     // IOS shadows
     shadowColor: "#30275c",

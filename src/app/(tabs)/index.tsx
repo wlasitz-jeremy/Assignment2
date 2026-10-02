@@ -5,13 +5,10 @@ import {
   View,
   StyleSheet,
   ScrollView,
-  Pressable,
-  TextInput,
 } from "react-native";
-import { SymbolView } from "expo-symbols";
 import LocationPin from "../../components/LocationPin";
 import HamburgerMenu from "../../components/HamburgerMenu";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import CardBox from "../../components/CardBox";
 import NavigationBar from "../../components/NavigationBar";
 import CollectionSearchBar from "../../components/CollectionSearchBar";
@@ -28,27 +25,45 @@ import CollectionSearchBar from "../../components/CollectionSearchBar";
   /*Pokemon Card Image Carousel */
 }
 const pokemonCardImages = [
-  require("../../assets/pokemonCards/pikachu_image.png"),
-  require("../../assets/pokemonCards/arceus_image.png"),
-  require("../../assets/pokemonCards/g_image.png"),
+  require("../../../assets/pokemonCards/pikachu_image.png"),
+require("../../../assets/pokemonCards/arceus_image.png"),
+  require("../../../assets/pokemonCards/g_image.png"),
+  require("../../../assets/pokemonCards/pikachu_image.png"),
+require("../../../assets/pokemonCards/arceus_image.png"),
+  require("../../../assets/pokemonCards/g_image.png"),
+  require("../../../assets/pokemonCards/pikachu_image.png"),
+  require("../../../assets/pokemonCards/arceus_image.png"),
+  require("../../../assets/pokemonCards/g_image.png"),
 ];
 
 {
   /*Magic Card Image Carousel */
 }
 const magicCardImages = [
-  require("../../assets/magicCards/magic1.png"),
-  require("../../assets/magicCards/magic2.png"),
-  require("../../assets/magicCards/magic3.png"),
+  require("../../../assets/magicCards/magic1.png"),
+  require("../../../assets/magicCards/magic2.png"),
+  require("../../../assets/magicCards/magic3.png"),
+  require("../../../assets/magicCards/magic1.png"),
+  require("../../../assets/magicCards/magic2.png"),
+  require("../../../assets/magicCards/magic3.png"),
+  require("../../../assets/magicCards/magic1.png"),
+  require("../../../assets/magicCards/magic2.png"),
+  require("../../../assets/magicCards/magic3.png"),
 ];
 
 {
   /*Riftbound Card Image Carousel */
 }
 const riftboundCardImages = [
-  require("../../assets/riftboundCards/r1.png"),
-  require("../../assets/riftboundCards/r2.png"),
-  require("../../assets/riftboundCards/r3.png"),
+  require("../../../assets/riftboundCards/r1.png"),
+  require("../../../assets/riftboundCards/r2.png"),
+  require("../../../assets/riftboundCards/r3.png"),
+  require("../../../assets/riftboundCards/r1.png"),
+  require("../../../assets/riftboundCards/r2.png"),
+  require("../../../assets/riftboundCards/r3.png"),
+  require("../../../assets/riftboundCards/r1.png"),
+  require("../../../assets/riftboundCards/r2.png"),
+  require("../../../assets/riftboundCards/r3.png"),
 ];
 
 {
@@ -57,14 +72,13 @@ const riftboundCardImages = [
   Page Header
     Title with Menu and Locations pin icons
   Search base with overlapping Filterbar
-  Alert Button
-    Alert pop up when alert button has been clicked
   Bottom Navigation bar with Icons
     Home Button
     Camera Button
     Search Function
     Library*/
 }
+
 export default function Index() {
   return (
       <SafeAreaView style={styles.container}>
@@ -81,12 +95,12 @@ export default function Index() {
         </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
-            <CardBox images={pokemonCardImages} />
-            <CardBox images={magicCardImages} />
-            <CardBox images={riftboundCardImages} />
+            <CardBox CardBoxText="Recently Added" images={pokemonCardImages} />
+            <CardBox CardBoxText="Top Gains / Losses" images={magicCardImages} />
+            <CardBox CardBoxText="Collection Progress" images={riftboundCardImages} />
           </View>
         </ScrollView>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
       </SafeAreaView>
   );
 }
@@ -103,6 +117,7 @@ const styles = StyleSheet.create({
   header: {
     height: 160,
     width: "100%",
+    marginBottom: 20,
   },
   headerIcons: {
     flexDirection: "row",
@@ -113,7 +128,7 @@ const styles = StyleSheet.create({
     fontFamily: "Oswald",
     fontSize: 46,
     fontWeight: "bold",
-    color: "#000000",
+    color: "#1E293B",
   },
   headerUserName: {
     width: "100%",
@@ -123,12 +138,11 @@ const styles = StyleSheet.create({
     fontFamily: "Oswald",
     fontSize: 18,
     fontWeight: "bold",
-    color: "#000000",
+    color: "#1E293B",
     marginVertical: 15,
   },
   content: {
     width: "100%",
-    height: "100%",
   },
   scrollcontent: {
     width: "100%",

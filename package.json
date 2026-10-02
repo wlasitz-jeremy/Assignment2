@@ -1,8 +1,9 @@
 {
   "name": "assignment2",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
     "expo": "~57.0.26",
     "expo-router": "~57.0.24",
     "expo-status-bar": "~57.0.1",

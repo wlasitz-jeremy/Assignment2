@@ -1,13 +1,10 @@
 import { SymbolView } from "expo-symbols";
 import { StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function HamburgerMenu() {
   return (
-    <SymbolView style={styles.hamburgerMenu}
-      name={{ ios: "menucard", android: "menu", web: "menu" }}
-      tintColor="black"
-      size={60}
-    />
+      <Ionicons name="menu" size={60} color="black" style={styles.hamburgerMenu} />
   );
 }
 
