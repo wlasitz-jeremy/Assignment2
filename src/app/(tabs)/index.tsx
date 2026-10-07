@@ -5,6 +5,7 @@ import {
   View,
   StyleSheet,
   ScrollView,
+  Pressable,
 } from "react-native";
 import LocationPin from "../../components/LocationPin";
 import HamburgerMenu from "../../components/HamburgerMenu";
@@ -12,6 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CardBox from "../../components/CardBox";
 import NavigationBar from "../../components/NavigationBar";
 import CollectionSearchBar from "../../components/CollectionSearchBar";
+import { useRouter } from "expo-router";
 
 {
   /*
@@ -80,13 +82,17 @@ const riftboundCardImages = [
 }
 
 export default function Index() {
+  const router = useRouter();
   return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerIcons}>
             <HamburgerMenu />
             <Text style={styles.headerTitle}>Welcome</Text>
-            <LocationPin />
+            <Pressable onPress={() => router.push("../shopLocation")}>
+              <LocationPin />
+            </Pressable>
+            
           </View>
           <View style={styles.headerUserName}>
             <Text style={styles.userName}>Smeagol Reagol Rolkien Tolkien</Text>
