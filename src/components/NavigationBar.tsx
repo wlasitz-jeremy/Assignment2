@@ -16,7 +16,7 @@ export default function NavigationBar() {
   return (
     <View style={styles.footer}>
       <Pressable key="home" onPress={() => { router.replace("/")}}>
-        <Ionicons name="home" size={24} color="black" />
+        <Ionicons name="home-outline" size={24} color="black" />
       </Pressable>
 
       <Pressable key="cardScanner" onPress={() => { router.replace("/cardScanner")}}>
@@ -27,28 +27,9 @@ export default function NavigationBar() {
         <Ionicons name={pathname === "/universalSearch" ? "search" : "search-outline"} size={24} color="black" />
       </Pressable>
       
-      <Pressable key="index" onPress={() => { router.replace("/index")}}>
-        <Ionicons name="book" size={24} color="black" />
+      <Pressable key="index" onPress={() => { router.replace("/collections/collectionsIndex")}}>
+        <Ionicons name="book-outline" size={24} color="black" />
       </Pressable>
-
-   {/* {tabs.map((tab) => (
-  <Pressable
-    key={tab.route}
-    onPress={() => {
-      router.replace(tab.route);
-      console.log(`Trying to navigate to ${tab.route}`);
-      console.log(`Current pathname is ${pathname}`);
-    }}
-  >
-    <Ionicons
-      name={
-        pathname === tab.route ? tab.icon : tab.outline
-      }
-      size={24}
-      color="black"
-    />
-  </Pressable>
-))} */}
     </View>
   );
 }

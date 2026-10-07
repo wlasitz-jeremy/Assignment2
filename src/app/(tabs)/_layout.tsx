@@ -16,7 +16,6 @@ export default function TabBarLayout() {
             borderRadius: 10,
             flexDirection: "row",
             alignItems: "center",
-            // paddingHorizontal: 30,
             borderColor: "#000000",
           },
         }}
@@ -28,7 +27,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "home" : "home-outline"}
               size={24}
-              color={color}
+              color={'black'}
             />
           ),
         }}
@@ -36,11 +35,14 @@ export default function TabBarLayout() {
       <Tabs.Screen
         name="cardScanner"
         options={{
+          tabBarStyle: {
+            display: "none",
+          },
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "camera" : "camera-outline"}
               size={24}
-              color={color}
+              color={'black'}
             />
           ),
         }}
@@ -52,7 +54,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "search" : "search-outline"}
               size={24}
-              color={color}
+              color={'black'}
             />
           ),
         }}
@@ -64,7 +66,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "book" : "book-outline"}
               size={24}
-              color={color}
+              color={'black'}
             />
           ),
         }}
