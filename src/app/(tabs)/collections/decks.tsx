@@ -25,7 +25,7 @@ export default function Decks() {
             </View>
             <CollectionSearchBar mainSearch="My Decks" subSearch="Deck" />
             <ScrollView style={styles.scrollView}>
-                <CardImage images={RandomizedDecksCardImages} />
+                <CardImage images={RandomizedDecksCardImages.map((card) => card.image)} />
             </ScrollView>
         </SafeAreaView>
     );

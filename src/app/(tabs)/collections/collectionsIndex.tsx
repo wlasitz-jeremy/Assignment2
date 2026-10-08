@@ -25,7 +25,7 @@ export default function Collections() {
             </View>
             <CollectionSearchBar mainSearch="My Collection" subSearch="Collection" />
             <ScrollView style={styles.scrollView}>
-                <CardImage images={RandomizedCollectionsCardImages} />
+                <CardImage images={RandomizedCollectionsCardImages.map((card) => card.image)} />
             </ScrollView>
         </SafeAreaView>
     );

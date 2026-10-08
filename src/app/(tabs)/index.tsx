@@ -56,9 +56,9 @@ export default function Index() {
         </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
-            <CardBox CardBoxText="Recently Added" images={[...pokemonCardImages]} />
-            <CardBox CardBoxText="Top Gains / Losses" images={[...lorcanaCardImages]} />
-            <CardBox CardBoxText="Collection Progress" images={[...riftboundCardImages]} />
+            <CardBox CardBoxText="Recently Added" cards={[...pokemonCardImages].map((img) => ({ id: img.id, image: img.image }))} game="pokemon" />
+            <CardBox CardBoxText="Top Gains / Losses" cards={[...lorcanaCardImages].map((img) => ({ id: img.id, image: img.image }))} game="lorcana" />
+            <CardBox CardBoxText="Collection Progress" cards={[...riftboundCardImages].map((img) => ({ id: img.id, image: img.image }))} game="riftbound" />
           </View>
         </ScrollView>
       </SafeAreaView>

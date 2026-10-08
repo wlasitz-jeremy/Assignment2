@@ -7,20 +7,20 @@ import {
   ScrollView,
   Pressable
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 //props for the CardBox component
 type Props = {
   // An array of image sources to display in the carousel.
-  images: ImageSourcePropType[];
+  cards: { id: string | number; image: ImageSourcePropType }[];
+  game: "riftbound" | "lorcana" | "pokemon";
   // The text to display above the image carousel.
   CardBoxText: string;
 };
 
 /* Renders an image carousel within a styled card box. 
 Includes left/right navigation arrows and pagination dots.*/
-export default function cardBox({ images, CardBoxText }: Props) {
+export default function CardBox({ cards, game, CardBoxText }: Props) {
   const router = useRouter();
   return (
     <View>
@@ -31,9 +31,9 @@ export default function cardBox({ images, CardBoxText }: Props) {
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
           <View style={styles.imageRow}>
-          {images.map((image, Index) => (
-            <Pressable key={Index} onPress={() => router.push("/CardInfo")}>
-              <Image key={Index} source={image} style={styles.cardImage} />
+          {cards.map((card) => (
+            <Pressable key={card.id} onPress={() => router.push({ pathname: "/CardInfo", params: { game, cardId: String(card.id) }   })}>
+              <Image source={card.image} style={styles.cardImage} />
             </Pressable>
           ))}
           </View>

@@ -1,17 +1,22 @@
-import React from "react";
 import {View, Text, Image, Pressable, ScrollView, StyleSheet} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { useRouter, useLocalSearchParams } from "expo-router";
+import { lorcanaCardImages, pokemonCardImages, riftboundCardImages } from "../constants/CardImages";
 
+const cardsByGame = {
+  riftbound: riftboundCardImages,
+  lorcana: lorcanaCardImages,
+  pokemon: pokemonCardImages,
+};
 
-const CardImage = require("../../assets/riftboundCards/r3.png");
-
-const TAGS = ["#Tag", "#Tag", "#Tag", "#Tag", "#Tag"]
+const TAGS = ["#Tag", "#Tag", "#Tag", "#Tag", "#Tag"];
 
 export default function CardInfo() {
-    const router = useRouter();
-
+  const router = useRouter();
+  const { game, cardId } = useLocalSearchParams<{ game: keyof typeof cardsByGame; cardId: string; }>();
+  const card = cardsByGame[game]?.find((c) => Number(c.id) === Number(cardId));
+  
     return (
         <SafeAreaView style={styles.container}>
                 <Pressable onPress={() => router.back()} hitSlop={12} style={styles.backButton}>
@@ -19,7 +24,7 @@ export default function CardInfo() {
                 </Pressable>
             <ScrollView>
                 <View style={styles.imageWrap}>
-                    <Image source={CardImage} style={styles.cardImage} resizeMode="contain"/>
+                    <Image source={card?.image} style={styles.cardImage} resizeMode="contain"/>
                 </View>
 
                 <View style={styles.tagRow}>
