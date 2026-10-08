@@ -5,8 +5,10 @@ import {
   Text,
   View,
   ScrollView,
+  Pressable
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 
 //props for the CardBox component
 type Props = {
@@ -19,6 +21,7 @@ type Props = {
 /* Renders an image carousel within a styled card box. 
 Includes left/right navigation arrows and pagination dots.*/
 export default function cardBox({ images, CardBoxText }: Props) {
+  const router = useRouter();
   return (
     <View>
       <Text style={{ color: "#424B57" }}>{CardBoxText}</Text>
@@ -29,7 +32,9 @@ export default function cardBox({ images, CardBoxText }: Props) {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
           <View style={styles.imageRow}>
           {images.map((image, Index) => (
-            <Image key={Index} source={image} style={styles.cardImage} />
+            <Pressable key={Index} onPress={() => router.push("/cardInfo")}>
+              <Image key={Index} source={image} style={styles.cardImage} />
+            </Pressable>
           ))}
           </View>
         </ScrollView>

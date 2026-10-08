@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 
-const CardImage = require("../../../assets/riftboundCards/r3.png");
+const CardImage = require("../../assets/riftboundCards/r3.png");
 
 const TAGS = ["#Tag", "#Tag", "#Tag", "#Tag", "#Tag"]
 
