@@ -11,7 +11,7 @@ export default function CardScanner() {
   const opacityAnimation = useRef(new Animated.Value(1)).current;
 
 
-      // Potential implementation of card frame overlay and boundaries for scanning.
+  // Potential implementation of card frame overlay and boundaries for scanning.
   // const screenWidth = Dimensions.get("window").width;
   // const frameWidth = screenWidth * 0.7;
   // const frameHeight = frameWidth * (7 / 5);
@@ -52,7 +52,7 @@ export default function CardScanner() {
         </Pressable>
       </View>
       <View style={ styles.cameraContainer }>
-        <CardScannerCamera />
+        {/* <CardScannerCamera /> */}
       </View>
       <View style={{ flex: 1 }}></View>
       <View style={ styles.controls }>

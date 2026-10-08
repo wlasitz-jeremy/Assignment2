@@ -15,7 +15,7 @@ export default function shopLocation() {
                 </Pressable>
             </View>
             <View style={styles.mapContainer}>
-                <CardShopMap />
+                {/* <CardShopMap /> */}
             </View>
             <View style={styles.footer}>    
                 <NavigationBar />
