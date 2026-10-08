@@ -32,7 +32,7 @@ export default function cardBox({ images, CardBoxText }: Props) {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
           <View style={styles.imageRow}>
           {images.map((image, Index) => (
-            <Pressable key={Index} onPress={() => router.push("/cardInfo")}>
+            <Pressable key={Index} onPress={() => router.push("/CardInfo")}>
               <Image key={Index} source={image} style={styles.cardImage} />
             </Pressable>
           ))}
