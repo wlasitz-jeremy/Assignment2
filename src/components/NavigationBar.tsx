@@ -6,12 +6,6 @@ import { Ionicons } from "@expo/vector-icons";
 export default function NavigationBar() {
   const router = useRouter();
   const pathname = usePathname();
-  const tabs = [
-    { icon: "home", route: "/", outline: "home-outline" },
-    { icon: "camera", route: "/cardScanner", outline: "camera-outline" },
-    { icon: "search", route: "/universalSearch", outline: "search-outline" },
-    { icon: "book", route: "/collections", outline: "book-outline" },
-  ] as const;
 
   return (
     <View style={styles.footer}>

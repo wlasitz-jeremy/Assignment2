@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { lorcanaCardImages, pokemonCardImages, riftboundCardImages } from "../constants/CardImages";
+import NavigationBar from "../components/NavigationBar";
 
 const cardsByGame = {
   riftbound: riftboundCardImages,
@@ -34,27 +35,26 @@ export default function CardInfo() {
                         </View>
                     ))}
                 </View>
-
                 <Text style={styles.cardPrice}>Card Price History</Text>
                 <View style={styles.priceRow}>
                     <View style={styles.chart}>
                         <Text style={styles.chartLabel}>Raw</Text>
                     </View>
-
                     <View style={styles.cardValue}>
                         <Text style={styles.chartLabel}>Market Value</Text>
                         <View style={styles.conditionBox}>
                             <Text style={styles.conditionText}>Near Mint</Text>
                             <Text style={styles.price}>$ 39.99</Text>
                         </View>
-
                         <Pressable style={styles.cartButton}>
                             <Text style={styles.cartText}>Add to Cart</Text>
                         </Pressable>
                     </View>
                 </View>
-
             </ScrollView>
+            <View style={{ marginTop: 35, alignItems: "center", marginBottom: -20 }}>
+            <NavigationBar />
+            </View>
         </SafeAreaView>
     );
 }

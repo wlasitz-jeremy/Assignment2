@@ -1,7 +1,6 @@
-import { View, StyleSheet, Pressable, Animated, Dimensions } from "react-native";
+import { View, StyleSheet, Pressable, Animated } from "react-native";
 import CardScannerCamera from "../../components/CardScannerCamera";
 import { useRouter } from "expo-router";
-import LocationMap from "../../components/LocationPin";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRef } from "react";
