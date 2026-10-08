@@ -11,9 +11,9 @@ import LocationPin from "../../components/LocationPin";
 import HamburgerMenu from "../../components/HamburgerMenu";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CardBox from "../../components/CardBox";
-import NavigationBar from "../../components/NavigationBar";
 import CollectionSearchBar from "../../components/CollectionSearchBar";
 import { useRouter } from "expo-router";
+import { lorcanaCardImages, pokemonCardImages, riftboundCardImages } from "../../constants/CardImages";
 
 {
   /*
@@ -22,39 +22,6 @@ import { useRouter } from "expo-router";
   component to created the card image carousel. 
   */
 }
-
-{
-  /*Pokemon Card Image Carousel */
-}
-const pokemonCardImages = [
-  require("../../../assets/pokemonCards/pikachu_image.png"),
-  require("../../../assets/pokemonCards/arceus_image.png"),
-  require("../../../assets/pokemonCards/g_image.png"),
-  require("../../../assets/pokemonCards/Victini_image.png"),
-  require("../../../assets/pokemonCards/Zeraora_image.png"),
-];
-
-{
-  /*Magic Card Image Carousel */
-}
-const magicCardImages = [
-  require("../../../assets/magicCards/magic1.png"),
-  require("../../../assets/magicCards/magic2.png"),
-  require("../../../assets/magicCards/magic3.png"),
-  require("../../../assets/magicCards/magic4.png"),
-  require("../../../assets/magicCards/magic5.png"),
-];
-
-{
-  /*Riftbound Card Image Carousel */
-}
-const riftboundCardImages = [
-  require("../../../assets/riftboundCards/r1.png"),
-  require("../../../assets/riftboundCards/r2.png"),
-  require("../../../assets/riftboundCards/r3.png"),
-  require("../../../assets/riftboundCards/r4.png"),
-  require("../../../assets/riftboundCards/r5.png"),
-];
 
 {
   /*Index Page layout and assets.
@@ -89,12 +56,11 @@ export default function Index() {
         </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
-            <CardBox CardBoxText="Recently Added" images={pokemonCardImages} />
-            <CardBox CardBoxText="Top Gains / Losses" images={magicCardImages} />
-            <CardBox CardBoxText="Collection Progress" images={riftboundCardImages} />
+            <CardBox CardBoxText="Recently Added" images={[...pokemonCardImages]} />
+            <CardBox CardBoxText="Top Gains / Losses" images={[...lorcanaCardImages]} />
+            <CardBox CardBoxText="Collection Progress" images={[...riftboundCardImages]} />
           </View>
         </ScrollView>
-        {/* <NavigationBar /> */}
       </SafeAreaView>
   );
 }
