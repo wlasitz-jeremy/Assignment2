@@ -38,7 +38,7 @@ export default function burgerMainMenu() {
           <Pressable
             key="shop"
             onPress={() => {
-              router.replace("/(tabs)/shop");
+              router.push("/(tabs)/shop");
             }}
             style={styles.pressableIcon}
           >

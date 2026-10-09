@@ -13,9 +13,7 @@ export default function shopPage() {
   return (
     <View style={styles.container}>
       <View style={styles.topnavbar}>
-        <Pressable>
-          <HamburgerMenu />
-        </Pressable>
+        <HamburgerMenu />
         <Image source={iconImage} style={styles.image}></Image>
         <AntDesign name="shopping-cart" size={60} />
         <LocationPin />
