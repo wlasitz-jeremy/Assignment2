@@ -14,11 +14,13 @@ const background = require("../../../assets/menuIcons/HamburgerBackground.png");
 
 export default function burgerMainMenu() {
   return (
+    // Background Image
     <ImageBackground
       source={background}
       resizeMode="cover"
       style={styles.Image}
     >
+      {/* List of Pressable Icons */}
       <View style={styles.burger}>
         <View>
           <Pressable onPress={() => router.back()}>
