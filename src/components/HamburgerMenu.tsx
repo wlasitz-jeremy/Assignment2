@@ -10,6 +10,7 @@ type HamburgerMenuProps = {
 export default function HamburgerMenu({
   isActive = false,
 }: HamburgerMenuProps) {
+  const router = useRouter();
   return (
     <Pressable
       // WIP need to get menu to got back to the previous pages

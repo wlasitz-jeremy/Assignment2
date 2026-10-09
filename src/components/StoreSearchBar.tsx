@@ -1,7 +1,10 @@
 import { View, TextInput, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function CollectionSearchBar({
+// Store search bar component that provides a main search input and a sub search input with a search icon.
+
+// The main search input is used for general search queries, while the sub search input allows for filtering or selecting specific categories.
+export default function StoreSearchBar({
   mainSearch,
   subSearch,
 }: {
@@ -22,6 +25,7 @@ export default function CollectionSearchBar({
   );
 }
 
+// Styles for the store search bar component.
 const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: "row",

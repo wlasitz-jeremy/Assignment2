@@ -1,4 +1,4 @@
-// This file contains the data for all card shops including their id, name, address, latitude, and longitude.
+// This file contains the data for all card shops including their id, name, address, latitude, longitude, and description.
 
 export const cardShops = [
   {

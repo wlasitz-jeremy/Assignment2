@@ -11,7 +11,7 @@ import { useRouter } from "expo-router";
 
 //props for the CardBox component
 type Props = {
-  // An array of image sources to display in the carousel.
+  // The array of card objects to display in the carousel. Each card has an ID and an image.
   cards: { id: string | number; image: ImageSourcePropType }[];
   game: "riftbound" | "lorcana" | "pokemon";
   // The text to display above the image carousel.
@@ -21,6 +21,7 @@ type Props = {
 /* Renders an image carousel within a styled card box. 
 Includes left/right navigation arrows and pagination dots.*/
 export default function CardBox({ cards, game, CardBoxText }: Props) {
+  // Initialize the router for navigation to the CardInfo page when a card is pressed. Game and card ID are passed as parameters.
   const router = useRouter();
   return (
     <View style={styles.container}>
@@ -34,6 +35,7 @@ export default function CardBox({ cards, game, CardBoxText }: Props) {
           showsHorizontalScrollIndicator={false}
           style={styles.scrollView}
         >
+          {/* Mapping through the cards array to render each card as a pressable image. When pressed, navigates to the CardInfo page with the game and card ID as parameters. */}
           <View style={styles.imageRow}>
             {cards.map((card) => (
               <Pressable
@@ -63,6 +65,7 @@ export default function CardBox({ cards, game, CardBoxText }: Props) {
   );
 }
 
+// Styles for the CardBox component
 const styles = StyleSheet.create({
   container: {
     width: "90%",

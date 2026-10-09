@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 export default function NavigationBar() {
   const router = useRouter();
   const pathname = usePathname();
-
+// Navigation bar component that provides quick access to different pages using pressable icons. Highlights the current page based on the pathname.
   return (
     <View style={styles.footer}>
       <Pressable key="home" onPress={() => { router.replace("/")}}>
@@ -27,7 +27,7 @@ export default function NavigationBar() {
     </View>
   );
 }
-
+// Styles for the navigation bar component.
 const styles = StyleSheet.create({
   footer: {
     height: 78.5,

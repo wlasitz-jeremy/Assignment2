@@ -3,6 +3,8 @@ import { Camera, CameraView } from "expo-camera";
 import { useEffect, useState } from "react";
 import { Alert } from "react-native";
 
+// WORK IN PROGRESS: Card scanner camera component that requests camera permissions and displays the camera view if granted.
+
 export default function CardScannerCamera() {
     const [hasPermission, setHasPermission] = useState<boolean | null>(null);
 

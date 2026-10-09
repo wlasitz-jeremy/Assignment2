@@ -1,6 +1,9 @@
 import { View, TextInput, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
+// Collection search bar component that provides a main search input and a sub search input with a dropdown icon.
+// The main search input is used for general search queries, while the sub search input allows for filtering or selecting specific categories.
+
 export default function CollectionSearchBar({ mainSearch, subSearch }: { mainSearch: string, subSearch: string }) {
   return (
           <View style={styles.searchBarContainer}>
