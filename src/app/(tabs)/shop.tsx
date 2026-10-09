@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Pressable, Text } from "react-native";
+import { View, Image, StyleSheet, Pressable, Text, ScrollView } from "react-native";
 import CardBox from "../../components/CardBox";
 import HamburgerMenu from "../../components/HamburgerMenu";
 import StoreSearchBar from "../../components/StoreSearchBar";
@@ -7,7 +7,10 @@ import { AntDesign } from "@expo/vector-icons";
 // Import the Cards from the collections
 import {
   lorcanaCardImages,
+  magicCardImages,
   pokemonCardImages,
+  riftboundCardImages,
+  yugiohCardImages,
 } from "../../constants/CardImages";
 // Initialize the Background image for the Main Menu
 const iconImage = require("../../../assets/menuIcons/Icon.png");
@@ -25,9 +28,10 @@ export default function shopPage() {
 
       {/* Search Box */}
       <View style={styles.searchbar}>
-        <StoreSearchBar mainSearch="Search Products/Stores" subSearch="" />
+        <StoreSearchBar mainSearch="Search Products/Stores" subSearch="search" />
       </View>
       {/* top Card Box */}
+      <ScrollView>
       <View style={styles.categories}>
         <CardBox
           CardBoxText="Newly Added"
@@ -63,7 +67,7 @@ export default function shopPage() {
         </View>
       </View>
 
-      {/* Bottom Card Box */}
+      {/* Bottom Card Boxs including Game specific collections sold.  */}
       <View style={styles.categories}>
         <CardBox
           CardBoxText="Bundle Deals"
@@ -73,7 +77,48 @@ export default function shopPage() {
           }))}
           game="lorcana"
         />
+        <CardBox
+          CardBoxText="Lorcana"
+          cards={[...lorcanaCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="lorcana"
+        />
+        <CardBox
+          CardBoxText="Yu-Gi-Oh"
+          cards={[...yugiohCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="yugioh"
+        />
+        <CardBox
+          CardBoxText="Riftbound"
+          cards={[...riftboundCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="riftbound"
+        />
+        <CardBox
+          CardBoxText="Pokemon"
+          cards={[...pokemonCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="pokemon"
+        />
+        <CardBox
+          CardBoxText="Magic the Gathering"
+          cards={[...magicCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="magic"
+        />
       </View>
+      </ScrollView>
     </View>
   );
 }
@@ -106,7 +151,6 @@ const styles = StyleSheet.create({
   categories: {
     marginTop: 25,
     gap: 12,
-    paddingHorizontal: 16,
   },
   // Styles for the category row
   categoryRow: {
@@ -124,6 +168,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#E8E5F7",
     alignItems: "center",
     justifyContent: "center",
+    marginHorizontal: 16,
   },
   // Style for the text inside bubble
   bubbleText: {

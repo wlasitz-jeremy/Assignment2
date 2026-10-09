@@ -1,22 +1,15 @@
 import { Pressable, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { usePathname, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 
-// Initialize the isActive Prop
-type HamburgerMenuProps = {
-  isActive?: boolean;
-};
-
-export default function HamburgerMenu({
-  isActive = false,
-}: HamburgerMenuProps) {
+// Hamburger menu component that navigates to the burger main menu page when pressed
+export default function HamburgerMenu() {
   const router = useRouter();
   return (
     <Pressable
-      // WIP need to get menu to got back to the previous pages
       key="burgerMainMenu"
       onPress={() => {
-        router.push("/(tabs)/burgerMainMenu");
+        router.push("/burgerMainMenu");
       }}
     >
       <Ionicons
@@ -29,6 +22,7 @@ export default function HamburgerMenu({
   );
 }
 
+// Styles for the hamburger menu icon
 const styles = StyleSheet.create({
   hamburgerMenu: {
     marginLeft: 25,

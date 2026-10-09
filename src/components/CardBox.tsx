@@ -13,7 +13,7 @@ import { useRouter } from "expo-router";
 type Props = {
   // The array of card objects to display in the carousel. Each card has an ID and an image.
   cards: { id: string | number; image: ImageSourcePropType }[];
-  game: "riftbound" | "lorcana" | "pokemon";
+  game: "riftbound" | "lorcana" | "pokemon" | "yugioh" | "magic";
   // The text to display above the image carousel.
   CardBoxText: string;
 };
