@@ -5,7 +5,7 @@ import {
   Text,
   View,
   ScrollView,
-  Pressable
+  Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
 
@@ -23,19 +23,31 @@ Includes left/right navigation arrows and pagination dots.*/
 export default function CardBox({ cards, game, CardBoxText }: Props) {
   const router = useRouter();
   return (
-    <View>
-      <Text style={{ color: "#424B57" }}>{CardBoxText}</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>{CardBoxText}</Text>
       <View style={styles.imageCarousel}>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>
         </View>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={styles.scrollView}
+        >
           <View style={styles.imageRow}>
-          {cards.map((card) => (
-            <Pressable key={card.id} onPress={() => router.push({ pathname: "/CardInfo", params: { game, cardId: String(card.id) }   })}>
-              <Image source={card.image} style={styles.cardImage} />
-            </Pressable>
-          ))}
+            {cards.map((card) => (
+              <Pressable
+                key={card.id}
+                onPress={() =>
+                  router.push({
+                    pathname: "/CardInfo",
+                    params: { game, cardId: String(card.id) },
+                  })
+                }
+              >
+                <Image source={card.image} style={styles.cardImage} />
+              </Pressable>
+            ))}
           </View>
         </ScrollView>
         <View style={styles.arrowButton}>
@@ -52,6 +64,10 @@ export default function CardBox({ cards, game, CardBoxText }: Props) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: "90%",
+    alignSelf: "center",
+  },
   scrollView: {
     flexDirection: "row",
   },
@@ -133,5 +149,10 @@ const styles = StyleSheet.create({
     height: 5,
     borderRadius: 3,
     backgroundColor: "#777777",
+  },
+  // Text styling
+  text: {
+    color: "#424B57",
+    alignSelf: "flex-start",
   },
 });

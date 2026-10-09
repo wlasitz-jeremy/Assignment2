@@ -1,9 +1,32 @@
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
+import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function HamburgerMenu() {
+type HamburgerMenuProps = {
+  isActive?: boolean;
+};
+
+export default function HamburgerMenu({
+  isActive = false,
+}: HamburgerMenuProps) {
   return (
-      <Ionicons name="menu" size={60} color="black" style={styles.hamburgerMenu} />
+    <Pressable
+      key="burgerMainMenu"
+      onPress={() => {
+        if (isActive) {
+          router.back();
+        } else {
+          router.push("/(tabs)/burgerMainMenu");
+        }
+      }}
+    >
+      <Ionicons
+        name="menu"
+        size={60}
+        color="black"
+        style={styles.hamburgerMenu}
+      />
+    </Pressable>
   );
 }
 

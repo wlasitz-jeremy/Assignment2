@@ -3,22 +3,22 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function TabBarLayout() {
   return (
-    <Tabs 
-        screenOptions={{
-          headerShown: false,
-          tabBarStyle: {
-            height: 78.5,
-            width: "80%",
-            backgroundColor: "#E2E1F4",
-            borderWidth: 1,
-            marginBottom: 40,
-            marginLeft: "10%",
-            borderRadius: 10,
-            flexDirection: "row",
-            alignItems: "center",
-            borderColor: "#000000",
-          },
-        }}
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          height: 78.5,
+          width: "80%",
+          backgroundColor: "#E2E1F4",
+          borderWidth: 1,
+          marginBottom: 40,
+          marginLeft: "10%",
+          borderRadius: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          borderColor: "#000000",
+        },
+      }}
     >
       <Tabs.Screen
         name="index"
@@ -27,7 +27,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "home" : "home-outline"}
               size={24}
-              color={'black'}
+              color={"black"}
             />
           ),
         }}
@@ -42,7 +42,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "camera" : "camera-outline"}
               size={24}
-              color={'black'}
+              color={"black"}
             />
           ),
         }}
@@ -54,7 +54,7 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "search" : "search-outline"}
               size={24}
-              color={'black'}
+              color={"black"}
             />
           ),
         }}
@@ -66,10 +66,15 @@ export default function TabBarLayout() {
             <Ionicons
               name={focused ? "book" : "book-outline"}
               size={24}
-              color={'black'}
+              color={"black"}
             />
           ),
         }}
+      />
+      <Tabs.Screen name="shop" options={{ href: null }} />
+      <Tabs.Screen
+        name="burgerMainMenu"
+        options={{ href: null, tabBarStyle: { display: "none" } }}
       />
     </Tabs>
   );
