@@ -24,7 +24,14 @@ export default function shopPage() {
         <StoreSearchBar mainSearch="Search Products/Stores" subSearch="" />
       </View>
       <View style={styles.categories}>
-        <CardBox CardBoxText="Newly Added" cards={[...pokemonCardImages]} />
+        <CardBox
+          CardBoxText="Newly Added"
+          cards={[...pokemonCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="pokemon"
+        />
       </View>
       <View style={styles.categories}>
         <View style={styles.categoryRow}>
@@ -49,7 +56,14 @@ export default function shopPage() {
         </View>
       </View>
       <View style={styles.categories}>
-        <CardBox CardBoxText="Bundle Deals" cards={[...lorcanaCardImages]} />
+        <CardBox
+          CardBoxText="Bundle Deals"
+          cards={[...lorcanaCardImages].map((img) => ({
+            id: img.id,
+            image: img.image,
+          }))}
+          game="lorcana"
+        />
       </View>
     </View>
   );
