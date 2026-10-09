@@ -25,7 +25,7 @@ export default function Explore() {
           </View>
           <CollectionSearchBar mainSearch="My Explore" subSearch="Decks" />
           <ScrollView style={styles.scrollView}>
-            <CardImage images={RandomizedExploreCardImages.map((card) => card.image)} />
+            <CardImage cards={RandomizedExploreCardImages.map((card) => ({ id: card.id, image: card.image }))} game="magic" />
           </ScrollView>
         </SafeAreaView>
     );

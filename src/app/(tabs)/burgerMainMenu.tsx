@@ -21,7 +21,9 @@ export default function burgerMainMenu() {
     >
       <View style={styles.burger}>
         <View>
-          <HamburgerMenu isActive />
+          <Pressable onPress={() => router.back()}>
+          <Ionicons name="chevron-back" color="black" size={60}/>
+        </Pressable>
         </View>
         <View>
           <Pressable style={styles.pressableIcon}>

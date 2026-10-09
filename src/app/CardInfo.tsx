@@ -2,13 +2,14 @@ import {View, Text, Image, Pressable, ScrollView, StyleSheet} from "react-native
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter, useLocalSearchParams } from "expo-router";
-import { lorcanaCardImages, pokemonCardImages, riftboundCardImages } from "../constants/CardImages";
+import { lorcanaCardImages, pokemonCardImages, riftboundCardImages, magicCardImages } from "../constants/CardImages";
 import NavigationBar from "../components/NavigationBar";
 
 const cardsByGame = {
   riftbound: riftboundCardImages,
   lorcana: lorcanaCardImages,
   pokemon: pokemonCardImages,
+  magic: magicCardImages,
 };
 
 const TAGS = ["#Tag", "#Tag", "#Tag", "#Tag", "#Tag"];

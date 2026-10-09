@@ -25,7 +25,7 @@ export default function Collections() {
             </View>
             <CollectionSearchBar mainSearch="My Collection" subSearch="Collection" />
             <ScrollView style={styles.scrollView}>
-                <CardImage images={RandomizedCollectionsCardImages.map((card) => card.image)} />
+                <CardImage cards={RandomizedCollectionsCardImages.map((card) => ({ id: card.id, image: card.image }))} game="magic" />
             </ScrollView>
         </SafeAreaView>
     );

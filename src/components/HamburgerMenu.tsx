@@ -1,25 +1,15 @@
 import { Pressable, StyleSheet } from "react-native";
-import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { usePathname, useRouter } from "expo-router";
 
-type HamburgerMenuProps = {
-  isActive?: boolean;
-};
 
-export default function HamburgerMenu({
-  isActive = false,
-}: HamburgerMenuProps) {
+
+export default function HamburgerMenu() {
+  const router = useRouter();  
   return (
     <Pressable
       key="burgerMainMenu"
-      onPress={() => {
-        if (isActive) {
-          router.back();
-        } else {
-          router.push("/(tabs)/burgerMainMenu");
-        }
-      }}
-    >
+      onPress={() => { router.push("/(tabs)/burgerMainMenu")}}>
       <Ionicons
         name="menu"
         size={60}

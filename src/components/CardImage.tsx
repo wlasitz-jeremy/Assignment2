@@ -1,26 +1,32 @@
-import { View, Image, StyleSheet, ImageSourcePropType } from "react-native";
+import { View, Image, StyleSheet, ImageSourcePropType, Pressable } from "react-native";
+import { useRouter } from "expo-router";
 
 type Props = {
   // An array of image sources to display in the carousel.
-  images: ImageSourcePropType[];
+  cards: { id: string | number; image: ImageSourcePropType }[];
+  game: "magic";
 };
 
-export default function CardImage({ images }: Props) {
-
-    const leftColumnImages = images.filter((_, index) => index % 2 === 0);
-    const rightColumnImages = images.filter((_, index) => index % 2 !== 0);
+export default function CardImage({ cards, game }: Props) {
+    const router = useRouter();
+    const leftColumnImages = cards.filter((_, index) => index % 2 === 0);
+    const rightColumnImages = cards.filter((_, index) => index % 2 !== 0);
 
   return (
         <View style={styles.container}>
             <View style={styles.leftColumn}>
-                {leftColumnImages.map((imageRoute, Index) => (
-            <Image key={Index} source={imageRoute} style={styles.image} />
-          ))}
+                {leftColumnImages.map(({ id, image }) => (
+                  <Pressable key={id} onPress={() => router.push({ pathname: "/CardInfo", params: { game, cardId: String(id) }})}>
+                    <Image key={id} source={image} style={styles.image} />
+                  </Pressable>
+                ))}
             </View>
             <View style={styles.rightColumn}>          
-                {rightColumnImages.map((imageRoute, Index) => (
-            <Image key={Index} source={imageRoute} style={styles.image} />
-          ))}
+                {rightColumnImages.map(({ id, image }) => (
+                  <Pressable key={id} onPress={() => router.push({ pathname: "/CardInfo", params: { game, cardId: String(id) }})}>
+                    <Image key={id} source={image} style={styles.image} />
+                  </Pressable>
+                ))}
             </View>
         </View>
   );
