@@ -5,14 +5,14 @@ import {
   Text,
   Pressable,
 } from "react-native";
-import HamburgerMenu from "../../components/HamburgerMenu";
 import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 
 // The inital background image for the page
-const background = require("../../../assets/menuIcons/HamburgerBackground.png");
+const background = require("../../assets/menuIcons/HamburgerBackground.png");
 
 export default function burgerMainMenu() {
+  const router = useRouter();
   return (
     // Background Image
     <ImageBackground
@@ -23,7 +23,9 @@ export default function burgerMainMenu() {
       {/* List of Pressable Icons */}
       <View style={styles.burger}>
         <View>
-          <HamburgerMenu isActive />
+          <Pressable onPress={() => router.back()}>
+          <Ionicons name="chevron-back" color="black" size={60}/>
+        </Pressable>
         </View>
         <View>
           <Pressable style={styles.pressableIcon}>

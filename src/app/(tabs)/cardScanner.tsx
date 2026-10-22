@@ -5,6 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRef } from "react";
 
+// WORK IN PROGRESS: Card scanner page with camera view, scan button, and animated scan feedback.
+
 export default function CardScanner() {
   const router = useRouter();
   const scanAnimation = useRef(new Animated.Value(1)).current;

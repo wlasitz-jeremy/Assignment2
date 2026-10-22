@@ -1,3 +1,5 @@
+// Card images constants for different card games, including Lorcana, Pokemon, Riftbound, Shop, Yugioh, and Magic. Each array contains objects with an id and the corresponding image require path.
+
 export const lorcanaCardImages = [{
   id: 1,
   image: require("../../assets/lorcanaCards/l1.png"),

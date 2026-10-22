@@ -13,11 +13,13 @@ import { magicCardImages } from "../../../constants/CardImages";
 const CollectionsCardImages = [
   ...magicCardImages,
 ];
-
+// randomizing the order of the collection card images for the Collections page
 const RandomizedCollectionsCardImages = CollectionsCardImages.sort(() => Math.random() - 0.5);
 
 export default function Collections() {
     return (
+      // Collections page layout with a header (HamburgerMenu and CollectionsNavigation components imported), search bar, and scrollable card images
+      // Passing GAME and ID params to the CardImage component so it can correctly display the card image you tap on
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <HamburgerMenu />
@@ -25,12 +27,13 @@ export default function Collections() {
             </View>
             <CollectionSearchBar mainSearch="My Collection" subSearch="Collection" />
             <ScrollView style={styles.scrollView}>
-                <CardImage images={RandomizedCollectionsCardImages.map((card) => card.image)} />
+                <CardImage cards={RandomizedCollectionsCardImages.map((card) => ({ id: card.id, image: card.image }))} game="magic" />
             </ScrollView>
         </SafeAreaView>
     );
 }
 
+// Styles for the Collections page 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

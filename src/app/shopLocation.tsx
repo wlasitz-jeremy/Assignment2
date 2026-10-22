@@ -5,6 +5,8 @@ import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import CardShopMap from "../components/CardShopMap";
 
+// WORK IN PROGRESS: Shop location page with map view and navigation bar.
+
 export default function shopLocation() {
     const router = useRouter();
     return(

@@ -14,10 +14,13 @@ const ExploreCardImages = [
   ...magicCardImages,
 ];
 
+// randomizing the order of the collection card images for the Explore page
 const RandomizedExploreCardImages = ExploreCardImages.sort(() => Math.random() - 0.5);
 
 export default function Explore() {
     return (
+      // Explore page layout with a header (HamburgerMenu and CollectionsNavigation components imported), search bar, and scrollable card images
+      // Passing GAME and ID params to the CardImage component so it can correctly display the card image you tap on
       <SafeAreaView style={styles.container}>
           <View style={styles.exploreHeader}>
             <HamburgerMenu/>
@@ -25,12 +28,12 @@ export default function Explore() {
           </View>
           <CollectionSearchBar mainSearch="My Explore" subSearch="Decks" />
           <ScrollView style={styles.scrollView}>
-            <CardImage images={RandomizedExploreCardImages.map((card) => card.image)} />
+            <CardImage cards={RandomizedExploreCardImages.map((card) => ({ id: card.id, image: card.image }))} game="magic" />
           </ScrollView>
         </SafeAreaView>
     );
 }
-
+// Styles for the Explore page 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

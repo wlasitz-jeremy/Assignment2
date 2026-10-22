@@ -14,10 +14,13 @@ const DecksCardImages = [
   ...magicCardImages,
 ];
 
+// randomizing the order of the collection card images for the Decks page
 const RandomizedDecksCardImages = DecksCardImages.sort(() => Math.random() - 0.5);
 
 export default function Decks() {
     return (
+      // Decks page layout with a header (HamburgerMenu and CollectionsNavigation components imported), search bar, and scrollable card images
+      // Passing GAME and ID params to the CardImage component so it can correctly display the card image you tap on
         <SafeAreaView style={styles.container}>
             <View style={styles.decksHeader}>
                 <HamburgerMenu/>
@@ -25,12 +28,12 @@ export default function Decks() {
             </View>
             <CollectionSearchBar mainSearch="My Decks" subSearch="Deck" />
             <ScrollView style={styles.scrollView}>
-                <CardImage images={RandomizedDecksCardImages.map((card) => card.image)} />
+                <CardImage cards={RandomizedDecksCardImages.map((card) => ({ id: card.id, image: card.image }))} game="magic" />
             </ScrollView>
         </SafeAreaView>
     );
 }
-
+// Styles for the Decks page 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

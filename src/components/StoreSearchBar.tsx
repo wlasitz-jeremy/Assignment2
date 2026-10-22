@@ -1,24 +1,26 @@
 import { View, TextInput, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function CollectionSearchBar({
-  mainSearch,
-  subSearch,
-}: {
-  mainSearch: string;
-  subSearch: string;
-}) {
-  return (
-    <View style={styles.searchBarContainer}>
-      <View style={styles.mainSearchContainer}>
-        <TextInput placeholder={mainSearch} style={styles.mainSearch} />
-      </View>
+// Store search bar component that provides a main search input and a sub search input with a dropdown icon.
+// The main search input is used for general search queries, while the sub search input allows for filtering or selecting specific categories.
 
-      <View style={styles.subSearchContainer}>
-        <TextInput placeholder={subSearch} style={styles.subSearch} />
-        <Ionicons name="search" size={20} color="black" />
-      </View>
-    </View>
+export default function StoreSearchBar({ mainSearch, subSearch }: { mainSearch: string, subSearch: string }) {
+  return (
+          <View style={styles.searchBarContainer}>
+            <View style={styles.mainSearchContainer}>
+              <TextInput
+                placeholder={mainSearch}
+                style={styles.mainSearch}
+              />
+              <Ionicons name="search" size={20} color="transparent" />
+            </View>
+
+            <View style={styles.subSearchContainer}>
+              <TextInput placeholder={subSearch} style={styles.subSearch} />
+              <Ionicons name="search" size={20} color="black" />
+            
+            </View>
+          </View>
   );
 }
 

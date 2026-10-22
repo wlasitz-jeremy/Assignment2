@@ -5,6 +5,8 @@ import { cardShops } from "../constants/CardShopData";
 import { StyleSheet, Dimensions, View, Text, Pressable, ScrollView } from "react-native";
 import { Alert } from "react-native";
 
+// WORK IN PROGRESS: Card shop map component that requests location permissions, displays a map with user location, and shows shop markers with a popup for selected shop details.
+
 export default function CardShopMap() {
   const [locationPermission, setLocationPermission] = useState<any>(null);
   const [selectedShop, setSelectedShop] = useState<any>(null);

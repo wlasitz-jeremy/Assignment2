@@ -72,10 +72,6 @@ export default function TabBarLayout() {
         }}
       />
       <Tabs.Screen name="shop" options={{ href: null }} />
-      <Tabs.Screen
-        name="burgerMainMenu"
-        options={{ href: null, tabBarStyle: { display: "none" } }}
-      />
     </Tabs>
   );
 }
